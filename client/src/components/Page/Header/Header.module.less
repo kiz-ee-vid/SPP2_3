@@ -1,0 +1,60 @@
+@import "../../../less/variables";
+
+.header{
+  position: sticky;
+  top:0;
+  z-index: 99;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  background: #DDB869;
+
+  .container {
+    max-width: @containerWidth;
+
+    @media (max-width: @md1) {
+      max-width: 970px;
+    }
+    @media (max-width: @md2) {
+      max-width: 750px;
+    }
+    @media (max-width: @md3) {
+      max-width: none;
+      padding: 0 10px;
+    }
+
+    margin: 0 auto;
+
+    .body {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: @headerHeight;
+      color: @textColor2;
+
+      .navigation {
+        flex: 1;
+        position: relative;
+
+        .links_list {
+          display: flex;
+          align-items: center;
+
+          &> *:not(:last-child) {
+            margin-right: 36px;
+          }
+        }
+      }
+
+      .link {
+        transition: 0.25s;
+        font-size: 18px;
+        font-weight: 500;
+        border-bottom: 2px solid transparent;
+        cursor: pointer;
+
+        &:hover{
+          border-bottom: 2px solid @textColor2;
+        }
+      }
+    }
+  }
+}

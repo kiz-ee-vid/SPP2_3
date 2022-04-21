@@ -1,0 +1,81 @@
+@import "../../../less/variables";
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #F7E9B3;
+  border-radius: 8px;
+  padding: 5px 15px;
+  gap: 8px;
+
+  &.completed {
+    background-color: #a1faa1;
+  }
+
+  &.failed {
+    background-color: #fca1a1;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    .checkbox {
+      min-width: 14px;
+      min-height: 14px;
+    }
+
+    .name {
+      font-size: 20px;
+      font-weight: 500;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .delete {
+      flex-shrink: 0;
+      margin-left: auto;
+      font-size: 36px;
+      line-height: 20px;
+      width: 20px;
+      overflow: hidden;
+      transition: 0.4s;
+      cursor: pointer;
+      user-select: none;
+
+      &:hover {
+        color: @color3;
+      }
+    }
+  }
+  .main {
+    margin: 0 10px;
+
+    .desc {
+      font-size: 12px;
+      white-space: break-spaces;
+      hyphens: auto;
+      overflow-wrap: anywhere;
+
+      display: -webkit-box;
+      -webkit-line-clamp: 6;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+  .footer {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    .param_name {
+      font-weight: 500;
+    }
+
+    .datetime {
+      font-size: 13px;
+    }
+  }
+}
